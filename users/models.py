@@ -21,7 +21,7 @@ class Relationship(models.Model):
 
     is_agree = models.BooleanField('同意', default=False)
 
-    is_deleted = models.BooleanField('顯示',default=True)
+    is_deleted = models.BooleanField('已刪除',default=True)
 
     start_at = models.DateTimeField('開始時間', auto_now=True)
 

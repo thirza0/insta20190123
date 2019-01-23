@@ -30,6 +30,11 @@ class PostViewSet(CanLikeMixin, viewsets.ModelViewSet):
 
         return serializer
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        return Serializer
+
     @action(['POST'], True, permission_classes=[IsAuthenticated])
     def commit(self, request, pk):
         post = self.get_object()
