@@ -16,5 +16,5 @@ class CanSeePost(permissions.BasePermission):
         .following\
         .filter\
         .values_list('to_user', flat=True)
-
+        following_user_= list(following_user_list) + [request.user.id]
         return obj.creator.is_public or obj.creator_id in following_user_list
